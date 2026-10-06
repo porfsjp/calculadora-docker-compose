@@ -1,0 +1,18 @@
+# Usa a imagem criada na atividade anterior e permite reconstruí-la com o Dockerfile.
+services:
+  calculadora:
+    image: calculadora-docker:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: calculadora-compose
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    networks:
+      - calculadora-net
+    # A aplicação não grava dados; por isso, não é necessário usar volume.
+
+networks:
+  calculadora-net:
+    driver: bridge
