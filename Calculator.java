@@ -7,7 +7,7 @@ import java.util.*;
 
 public class Calculator {
   public static void main(String[] args) throws IOException {
-    HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
+    HttpServer server = HttpServer.create(new InetSocketAddress("0.0.0.0", 8000), 0);
     server.createContext("/", Calculator::handle);
     server.start();
     System.out.println("Calculadora disponível na porta 8000");
