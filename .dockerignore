@@ -1,0 +1,5 @@
+*.py
+*.class
+__pycache__/
+.git/
+.env
